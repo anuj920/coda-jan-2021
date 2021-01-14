@@ -1,0 +1,40 @@
+.player-list{
+    max-height: 80vh;
+    overflow: auto;
+    border-right: 1px dotted #E0F7FA;
+}
+
+.player{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px 15px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.player-top{
+    display: flex;
+}
+
+
+.player-postal{
+    display: inline-block;
+    width: 100px;
+    margin-right: 2.5px;
+
+    & img{
+        height: 60px;
+        width: 55px;
+        border-radius: 5px;
+    }
+}
+
+.player-detail{
+    width: 150px;
+    display: inline-block;
+}
+
+.player-desc{
+    display: inline-block;
+    font-size: 16px;
+}

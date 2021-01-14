@@ -1,0 +1,19 @@
+<div class="container-my">
+
+
+    <div class="row">
+
+        <div class="col-sm-3" style="background-color: #eeeeee;">
+
+            <app-player-left  [selected_player]="selectedPlayer"></app-player-left>
+
+        </div>
+
+        <div class="col-sm-9"style="background-color: #F5F5F5; min-height: 900px">
+
+            <app-player-right  [playerList]="playerList" [selected_count]="selectedPlayer?.length" (output_data)="updateSelectedList($event)" ></app-player-right>
+
+        </div>
+    </div>
+
+</div>

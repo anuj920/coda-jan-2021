@@ -1,0 +1,43 @@
+
+
+.select-play{
+    padding: 25px 15px;
+    color: #5E35B1;
+    font-size: 28px;
+}
+
+.coda-input{
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+.form-control:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow:none !important;
+    border-color: #5E35B1;
+    border-radius: 0;
+}
+
+.player-postal{
+    width: 100px;
+    margin-right: 2.5px;
+
+    & img{
+        height: 40px;
+        width: 35px;
+        border-radius: 5px;
+    }
+}
+table th{
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+table td{
+    vertical-align: middle;
+}

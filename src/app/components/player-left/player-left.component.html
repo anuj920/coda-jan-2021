@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-12"  style="height: 150px;">
+
+    </div>
+    <div class="col-12 player-list">
+       
+
+        <div class="player" *ngFor="let player of selected_list">
+            <div class="player-top">
+    
+                <div class="player-postal">
+    
+                    <img [src]="player.dp" alt="">
+    
+                </div>
+    
+                <div class="player-detail">
+                    <p>{{player.name | titlecase}}</p>
+                    <span>
+                        <span>Level {{player.level}}</span> &nbsp;
+                        <span>Wins {{player.wins}}</span>
+                    </span>
+                </div>
+
+                <div class="player-desc">
+                    <span>Price <br> {{player.price}}</span>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <button type="button" (click)="start()">Start</button>
+    </div>
+</div>

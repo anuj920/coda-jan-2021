@@ -1,0 +1,59 @@
+<div class="row" style="padding: 20px 10px">
+
+
+        <div class="col-12 select-play">
+            <span>Select Playing {{selected_count}}</span>
+        </div>
+
+        <div class="col-6">
+            <div class="inputBox">
+              <input type="text" class="form-control coda-input" placeholder="Search Player" (keyup)="keyUpSearch($event.target.value)">
+            </div>
+          </div>
+    
+    <div class="col-12" style="margin-top: 60px;">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Select</th>
+                <th scope="col">Name</th>
+                <th scope="col">Level</th>
+                <th scope="col">Avatar</th>
+                <th scope="col">Bet</th>
+                <th scope="col">Wins</th>
+                <th scope="col">Lost</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of search_list | paginate: { itemsPerPage: 10, currentPage: page, totalItems: search_list?.length }; let i = index;">
+                <td><input type="checkbox" [disabled]="selected_count >= 9 && !item.selected" (change)="onselectchange(item)" [(ngModel)]="item.selected"></td>
+                <td>{{item.name}}</td>
+                <td>{{item.level}}</td>
+                <td>
+                    <div class="player-postal">
+    
+                        <img [src]="item.dp" alt="">
+        
+                    </div>
+                </td>
+                <td>{{item.bet}}</td>
+                <td>{{item.wins}}</td>
+                <td>{{item.loss}}</td>
+                <td>{{item.price}}</td>
+              </tr>
+
+              <tr *ngIf="search_list?.length == 0">
+                <td colspan="8" class="noDataFound">
+                  <h1 class="text-center text-muted"><i class="far fa-frown"></i></h1>
+                  <h5 class="text-center text-muted">No Data Found</h5>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <div *ngIf="search_list?.length >0">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+          </div>
+    </div>
+</div>
